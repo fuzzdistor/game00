@@ -14,11 +14,11 @@ CFLAGS=-I$(IDIR)
 LIBS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 
 #header dependencies
-_DEPS = Game.hpp #ResourceHolder.hpp Aircraft.hpp Entity.hpp SceneNode.hpp SpriteNode.hpp World.hpp
+_DEPS = Game.hpp Entity.hpp #ResourceHolder.hpp Aircraft.hpp SceneNode.hpp SpriteNode.hpp World.hpp
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
 #object dependencies
-_OBJ = Main.o Game.o
+_OBJ = Main.o Game.o Entity.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 #make command

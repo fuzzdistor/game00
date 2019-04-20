@@ -1,5 +1,6 @@
 //Game.cpp
 #include "Game.hpp"
+#include "Entity.hpp"
 
 #include <SFML/Graphics.hpp>
 
@@ -14,20 +15,22 @@ Game::Game()
 void Game::run()
 {
     sf::RenderWindow window(WindowSize, "game00");
-
-    int frame = 0;
+    window.setFramerateLimit(60);
 	
-    sf::Time timeSinceLastUpdate = sf::Time::Zero;
-        
+
+    sf::Texture texture;
+    texture.loadFromFile("../resources/images/default.png");
+
+    sf::Sprite sprite;
+    sprite.setTexture(texture);
+
+    
+
     sf::Font font;
     font.loadFromFile("../resources/fonts/pixelarial.TTF");
     
-    sf::Text text;
-    text.setFont(font);
-
     sf::Event event;
     
-    sf::Clock clock;
 
     while(window.isOpen())
     {
@@ -37,17 +40,9 @@ void Game::run()
             if (event.type == sf::Event::KeyPressed)
                 window.close();
 
-        text.setString(std::to_string(frame));
-
-        sf::Time elapsedTime = clock.restart();
-		timeSinceLastUpdate += elapsedTime;
-		while (timeSinceLastUpdate > TimePerFrame)
-	    {
-            timeSinceLastUpdate -= TimePerFrame;
-            window.clear(sf::Color::Green);
-            window.draw(text);
-            window.display();
-            frame++;
+        window.clear(sf::Color::Green);
+        window.draw(sprite);
+        window.display();
         }
 
     }
