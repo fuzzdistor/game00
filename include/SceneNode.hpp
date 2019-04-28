@@ -45,7 +45,7 @@ public:
     void        checkSceneCollision(SceneNode& sceneGraph, std::set<Pair>& collisionPairs);
     void        checkNodeCollision(SceneNode& node, std::set<Pair>& collisionPairs);
     void        removeWrecks();
-    virtual sf::FloatRect   getBoundingRect()
+    virtual sf::FloatRect   getBoundingRect();
 
 private:
     std::vector<Ptr>    mChildren;
