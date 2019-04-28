@@ -23,4 +23,4 @@ namespace Category
 	};
 }
 
-#endif
+#endif //Category.hpp

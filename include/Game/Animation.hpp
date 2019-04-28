@@ -1,3 +1,4 @@
+//Animation.hpp
 #ifndef ANIMATION_HPP
 #define ANIMATION_HPP
 
@@ -50,4 +51,4 @@ private:
 	bool 					mRepeat;
 };
 
-#endif
+#endif //Animation.hpp

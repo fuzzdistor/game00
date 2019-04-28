@@ -16,9 +16,7 @@ namespace Textures
 	enum ID
 	{
 		Entities,
-		Jungle,
-		TestBG,
-		TitleScreen,
+		Background,
 		Buttons,
 		Explosion,
 		Particle,
@@ -34,7 +32,7 @@ namespace Shaders
 		DownSamplePass,
 		GaussianBlurPass,
 		AddPass,       
-    }
+    };
 }
 
 namespace Fonts
@@ -49,12 +47,6 @@ namespace SoundEffect
 {
 	enum ID
 	{
-		AlliedGunfire,
-		EnemyGunfire,
-		Explosion1,
-		Explosion2,
-		LaunchMissile,
-		CollectPickup,
 		Button,
 	};
 }
@@ -64,7 +56,7 @@ namespace Music
 	enum ID
 	{
 		MenuTheme,
-		MissionTheme,
+		ChillTune,
 	};
 }
 
