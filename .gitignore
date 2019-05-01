@@ -1,3 +1,4 @@
-Bin/*
+bin/*
 src/obj/*
 .vscode/
+game00.code-workspace

@@ -18,9 +18,7 @@ namespace Textures
 		Entities,
 		Background,
 		Buttons,
-		Explosion,
-		Particle,
-		FinishLine,
+		Default,
 	};
 }
 

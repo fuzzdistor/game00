@@ -47,6 +47,14 @@ public:
 		{
 		}
 
+		bool isInsideView(sf::FloatRect viewBounds, sf::Vector2u textureBounds)
+		{
+			sf::FloatRect spawnRect(x, y, textureBounds.x, textureBounds.y);
+			return spawnRect.intersects(viewBounds);
+		}
+	
+
+
 		Character::Type type;
 		float x;
 		float y;
@@ -76,7 +84,7 @@ private:
 
 	void 		buildScene();
 	void 		addCharacters();
-	void 		addCharacter(Character::Type type, float relX, float relY);
+	void 		addCharacter(Character::Type type, float x, float y);
 	void 		spawnCharacters();
 	void 		destroyEntitiesOutsideView();
 	
@@ -88,7 +96,7 @@ private:
 private:
 	sf::RenderTarget& 		mTarget;
 	sf::RenderTexture		mSceneTexture;
-	sf::View 				mView;
+	sf::View 				mWorldView;
 	TextureHolder			mTextures;
 	FontHolder& 			mFonts;
 	SoundPlayer& 			mSounds;

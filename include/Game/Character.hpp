@@ -6,7 +6,7 @@
 #include <Game/Command.hpp>
 #include <Game/ResourceIdentifiers.hpp>
 #include <Game/TextNode.hpp>
-#include "Animation.hpp"
+#include <Game/Animation.hpp>
 
 
 #include <SFML/Graphics/Sprite.hpp>
@@ -31,14 +31,19 @@ public:
 	virtual sf::FloatRect	getBoundingRect() const;
 	
 	virtual void		remove();
-	virtual bool 		isMarkedForRemoval() const;
 	
-	float 		getMaxSpeed() const;
+	float 				getMaxSpeed() const;
+
+private:
+	virtual void 		drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
+	virtual void 		updateCurrent(sf::Time dt, CommandQueue& commands);
+
+	void 		playLocalSound(CommandQueue& commands, SoundEffect::ID effect);
 
 private:
 	Type		mType;
 	sf::Sprite	mSprite;
-	TextNode* 	mNameDisplay;	
+	TextNode* 	mNameDisplay;
 };
 
 #endif //Character.hpp
