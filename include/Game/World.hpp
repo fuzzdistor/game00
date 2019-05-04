@@ -54,7 +54,6 @@ public:
 		}
 	
 
-
 		Character::Type type;
 		float x;
 		float y;
