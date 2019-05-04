@@ -47,7 +47,7 @@ public:
 
 	virtual sf::FloatRect	getBoundingRect() const;
 
-	virtual bool		isMarkedRemoval() const;
+	virtual bool		isMarkedForRemoval() const;
 	virtual bool		isDestroyed() const;
 
 
