@@ -98,22 +98,12 @@ void World::addCharacters()
 
 void World::addCharacter(Character::Type type, float x, float y)
 {
-	SpawnPoint spawnPoint(type, x, y);
-	mCharacterSpawnPoints.push_back(spawnPoint);
+	mCharacterSpawnPoints.emplace_back(type, x, y);
 }
 
 void World::spawnCharacters()
 {
-	for (auto spawn : mCharacterSpawnPoints)
-		if (spawn.isInsideView(getViewBounds(), mTextures.get(spawn.type)->getSize()))
-		{
-			std::unique_ptr<Character> character(new Character(spawn.type, mTextures, mFonts));
-			character->setPosition(spawn.x, spawn.y);
 
-			mSceneLayers[CharacterLayer]->attachChild(std::move(character));
-
-			mCharacterSpawnPoints.erase(spawn);
-		}
 }
 
 void World::destroyEntitiesOutsideView()

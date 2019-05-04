@@ -50,6 +50,11 @@ unsigned int Character::getCategory() const
 		return Category::NPCharacter;
 }
 
+sf::FloatRect Character::getBoundingRect() const
+{
+	return getWorldTransform().transformRect(mSprite.getGlobalBounds());
+}
+
 void Character::remove()
 {
 	Entity::remove();
